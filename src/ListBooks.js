@@ -27,7 +27,7 @@ class Listbooks extends React.Component {
                 <BookShelf title="Read" books={this.findBookShelf3()} onUpdateShelf={this.props.onUpdateShelf} />
                 <div className="open-search">
                     <Link to="/search">
-                        <button>Add a book</button>
+                        <span >Add a book</span>
                     </Link>
                 </div>
             </div>

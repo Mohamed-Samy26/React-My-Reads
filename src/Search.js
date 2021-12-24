@@ -8,37 +8,51 @@ import { Link } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 import Books from './Books'
 class Search extends Component {
+    //query= '';
     state = {
-        query: '',
         foundBooks: []
     }
     updateQuery = (query) => {
         this.setState(() => ({
             query: query.trim()
         }))
-        this.updateSearch()
+        this.updateSearch(query)
     }
 
-    updateSearch = () => {
-        if (this.state.query === '') {
+    handleShelf = (searchBooks) => {
+        let booksOnShelf = {};
+        this.props.books.forEach((book) => {
+            booksOnShelf[book.id +''] = book.shelf;});
+            const booksWithShelf = searchBooks.map((book) => {
+                const shelf = booksOnShelf[book.id];
+                if(!shelf){
+                    return{...book,shelf:null}
+                }
+                return{...book,shelf}
+            })
+            return booksWithShelf;
+        }
+    updateSearch = (query) => {
+        if (query === '') {
             this.setState(() => ({ foundBooks: [] }))
         }
         else {
-            BooksAPI.search(this.state.query).then((Books) => {
+            BooksAPI.search(query).then((Books) => {
                 if (Books.error) {
                     this.setState(() => ({ foundBooks: [] }))
                 }
                 else {
+                    const booksWithShelf = this.handleShelf(Books);
                     this.setState(() => ({
-                        foundBooks: Books
+                        foundBooks: booksWithShelf //.filter((book) => (book.hasOwnProperty('imageLinks').hasOwnProperty('smallThumbnail') ))
                     }))
                 }
             })
         }
     }
 
-    showBooks = () => {
-        if (this.state.query !== '') {
+    showBooks = (query) => {
+        if (query !== '') {
             return this.state.foundBooks.map((book) => (
                 <Books
                     key={book.id}
@@ -47,7 +61,7 @@ class Search extends Component {
                     book={book}
                     title={book.title}
                     author={book.authors}
-                    image={book.imageLinks.smallThumbnail}
+                    //image={book.imageLinks.smallThumbnail}
                     shelf={book.shelf}
                     onUpdateShelf={this.props.onUpdateShelf}
                 />
@@ -62,7 +76,7 @@ class Search extends Component {
                 <div className="search-books-bar">
                     <Link to="/"><button className="close-search">Close</button></Link>
                     <div className="search-books-input-wrapper">
-                        <input type="text" placeholder="Search by title or author" value={this.state.query}
+                        <input type="text" placeholder="Search by title or author" 
                             onChange={(event) => this.updateQuery(event.target.value)} />
                     </div>
                 </div>
