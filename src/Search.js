@@ -26,7 +26,7 @@ class Search extends Component {
             const booksWithShelf = searchBooks.map((book) => {
                 const shelf = booksOnShelf[book.id];
                 if(!shelf){
-                    return{...book,shelf:null}
+                    return{...book,shelf:'none'}
                 }
                 return{...book,shelf}
             })
