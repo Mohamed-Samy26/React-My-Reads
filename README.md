@@ -1,6 +1,12 @@
 # MyReads Project
 
-This is the project required by Udacity's React Development Cross-Skilling Nanodegree Program , It uses  [Create React App](https://github.com/facebookincubator/create-react-app)
+## Introduction 
+
+A front-end web application tht regulates your books into 3 separate categories with ability to add new books and remove them
+
+## Details
+
+This project uses  [Create React App](https://github.com/facebookincubator/create-react-app)
  and a backend api provieded by Udacity .
 * The main page shows a control that allows users to move books between shelves. The control should be tied to each book instance. The functionality of moving a book to a different shelf works correctly.
 * When the browser is refreshed, the same information is displayed on the page.
@@ -10,4 +16,6 @@ This is the project required by Udacity's React Development Cross-Skilling Nanod
 *  the book's state can be changed by selecting a new option from the green botton in front of it
  
  ## Installation 
- The application was created with create-react-app and requires only npm install and npm start or yarn start to get it installed and launched.
+ The application was created with create-react-app and requires only npm install and npm start or yarn start to get it installed and launched an localhost.
+
+#### Note: This project was made as a requirement to graduate from Udacity's React Development Cross-Skilling Nanodegree Program.
