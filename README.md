@@ -17,11 +17,14 @@ This project uses  [Create React App](https://github.com/facebookincubator/creat
 
 ## Home page
 
-The main landing page with the current state of books and ability to change its shelf or remove completely it from the dropdown menu
+#### The main landing page with the current state of books and ability to change its shelf or remove completely it from the dropdown menu
 
 <br>
  <img src="Screenshots/main.png" alt="Main" width=800 height= 450 />
 <br>
+
+#### The user can add new books using the `+` button
+
 <br>
  <img src="Screenshots/2.png" alt="Main" width=800 height= 450 />
 <br>
