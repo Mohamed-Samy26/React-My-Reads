@@ -14,8 +14,37 @@ This project uses  [Create React App](https://github.com/facebookincubator/creat
 *  Search results on the search page allow the user to select “currently reading”, “want to read”, or “read” to place the book in a certain shelf.
 *  Each book is assigned a shelf according to its current state [ Currently Reading ,Want to Read , Read  ]  
 *  the book's state can be changed by selecting a new option from the green botton in front of it
+
+## Home page
+
+The main landing page with the current state of books and ability to change its shelf or remove completely it from the dropdown menu
+
+<br>
+ <img src="Screenshots/main.png" alt="Main" width=800 height= 450 />
+<br>
+<br>
+ <img src="Screenshots/2.png" alt="Main" width=800 height= 450 />
+<br>
+
  
- ## Installation 
- The application was created with create-react-app and requires only npm install and npm start or yarn start to get it installed and launched an localhost.
+## Search page and routing
+
+* The app provides search functionality by utilizing its API 
+* Each user can search for any book and add it to any of his shelves.
+* The state of the books is consistent and won't be affected by restarts or closing the browser
+ 
+ <br>
+ <img src="Screenshots/search.png" alt="Main" width=800 height= 450 />
+<br>
+
+* The app also have a proper routing in the displayed URL
+
+ <br>
+ <img src="Screenshots/route.png" alt="Main" width=800 height= 450 />
+<br>
+
+ 
+## Installation 
+ The application was created with `create-react-app` and requires only `npm install` and `npm start` or `yarn start` to get it installed and launched an localhost.
 
 #### Note: This project was made as a requirement to graduate from Udacity's React Development Cross-Skilling Nanodegree Program.
