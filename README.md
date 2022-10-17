@@ -2,7 +2,7 @@
 
 ## Introduction 
 
-A front-end web application tht regulates your books into 3 separate categories with ability to add new books and remove them
+A front-end web application that regulates your books into 3 separate categories with ability to add new books and remove them
 
 ## Details
 
